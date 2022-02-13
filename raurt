@@ -1,66 +1,19 @@
 #!/usr/bin/env bash
 
-echo "This script should be run as sudo if you are on a non-root account."
-echo "You want to install the package $1."
-echo "Is this correct? y/n"
-read confirmation
+# TODO: put welcome in a function to make it human-readable when it expands
+# TODO: base-devel + git - check if installed	-- base-devel because makepkg on its own is bloated (apparently)
+# TODO: function to show details
 
-if [ $confirmation = "y" || $confirmation = "Y"]
-then
-  installDependencies
-  installPackage($1)
-else
-  echo "Aborting..."
-  exit 0
-fi
+VERSION="0.1.0"
 
-function isPackageInstalled() {
-  echo "Checking for installed dependencies.."
-  pacman -Qi "$packageName" &> /dev/null
-  echo $?
-}
+echo "raurt: version $VERSION"
+echo "Installing $1..."
 
-function installDependencies() {
-  if [ $(isPackageInstalled 'git') ]
-  then
-    echo "Git is installed."
-  else
-    echo "Git needs to be installed to get the package off the AUR."
-    echo "Install Git? y/n"
-    read git_install_confirmation
-    if [ git_install_confirmation = "y" || git_install_confirmation = "Y"]
-    then
-      echo "Installing Git"
-      pacman -Syy git
-    else
-      echo "Git must be installed to continue."
-      echo "Aborting..."
-      exit 0
-    fi
-  fi
-  if [ $(isPackageInstalled 'base-devel') ]
-  then
-    echo "The base-devel package is installed."
-  else
-    echo "The base-devel package needs to be installed to compile the package."
-    echo "Install base-devel? y/n"
-    read base-devel_confirmation
-    if [ base-devel_confirmation = "y" || base-devel_confirmation = "Y" ]
-    then
-      echo "Installing base-devel"
-      pacman -Syy base-devel
-  fi
-}
-
-function installPackage() {
-  git clone https://aur.archlinux.org/packages/$1.git
-  cd $1
-  makepkg -si
-  cd ..
-  echo "Would you like to delete the source directory? y/n"
-  read source_directory_confirmation
-  if [ source_directory_confirmation = "y" || source_directory_confirmation = "Y" ]
-  then
-    rm -rf $1
-  fi
-}
+git clone https://aur.archlinux.org/packages/$1.git ~/.raurt/pkgtempbuild/$1
+cd ~/.raurt/packages/$1
+makepkg -si
+cd ..
+# TODO: choose to keep the source directory or not
+rm -rf ~/.raurt/packages
+# the following returns them to the directory they were in before they ran the script
+cd --

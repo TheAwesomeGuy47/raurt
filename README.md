@@ -57,4 +57,15 @@
 
 <!-- ABOUT THE PROJECT -->
 ### About The Project
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+**raurt** is an acronym for 'Random Arch User Repository Tool'. It is an AUR helper, meaning that it grabs packages from the Arch User Repository and installs them.
+<br />
+It is written in [Bash](https://www.gnu.org/software/bash/) and is currently maintained by [TheAwesomeGuy47](https://github.com/TheAwesomeGuy47).
+<br />
+> I thought of the idea one night when I was bored. I just started learning simple Bash scripting and I thought, hey why not I'll make it in Bash
+<br/>
+> \- TheAwesomeGuy47
+
+---
+
+<!-- GETTING STARTED -->
