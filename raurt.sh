@@ -9,7 +9,7 @@ VERSION="0.1.0"
 echo "raurt: version $VERSION"
 echo "Installing $1..."
 
-git clone https://aur.archlinux.org/packages/$1 ~/.raurt/packages/$1
+git clone https://aur.archlinux.org/$1.git ~/.raurt/packages/$1
 cd ~/.raurt/packages/$1
 makepkg -si
 cd ..
