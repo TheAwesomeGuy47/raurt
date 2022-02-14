@@ -95,7 +95,7 @@ To install it via cloning the repository, use `git clone https://github.com/TheA
 <br />
 To install manually, follow these instructions carefully.
 <br />
-<ol>
+
   1. Create the directories required:<br />
       `mkdir -p ~/.raurt/packages`<br />
       `mkdir -p ~/.raurt/repo`<br />
@@ -104,7 +104,7 @@ To install manually, follow these instructions carefully.
       `git clone https://github.com/TheAwesomeGuy47/raurt ~/.raurt/repo`<br />
   3. Copy the **raurt** script:<br />
       `cp ~/.raurt/repo/raurt ~/.local/bin/raurt`<br />
-  Raurt is now installed!
-</ol>
+  **raurt** is now installed!
+
 <br />
 Something you might want to do is add the script to the PATH as shown in this wiki page (coming soon).
