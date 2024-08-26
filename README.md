@@ -62,8 +62,6 @@
 <br />
 It is written in [Bash](https://gnu.org/software/bash/) and is currently maintained by [TheAwesomeGuy47](https://github.com/TheAwesomeGuy47).
 <br />
-> I thought of the idea one night when I was bored. I just started learning simple Bash scripting and I thought, hey why not I'll make it in Bash <br />
-\- TheAwesomeGuy47
 
 ---
 
